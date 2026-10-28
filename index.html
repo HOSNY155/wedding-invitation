@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Invitation | دعوة زفاف</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f7f0e5;color:#454536;font-family:Arial,sans-serif;text-align:center}
+button,a{cursor:pointer}
+.lang{position:absolute;top:18px;left:18px;background:transparent;border:1px solid #b69a66;padding:9px 13px;color:#51462f}
+.cover{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:30px 20px;background:radial-gradient(#fffdf7,#eee1cc)}
+.inner{width:100%;max-width:380px}
+.small{color:#a58a56;letter-spacing:3px;font-size:12px}
+h1,h2,h3{font-family:'Amiri',serif;font-weight:400}
+h1{font-size:43px;line-height:1.5}
+p{line-height:2;color:#777462;font-size:14px}
+.envelope{height:205px;max-width:310px;margin:28px auto;position:relative;background:#e8d8bd;border:1px solid #c9b38d;box-shadow:0 12px 25px #6e593022}
+.envelope:before{content:"";position:absolute;inset:0;background:#dfceb0;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%)}
+.flap{position:absolute;inset:0 0 auto;height:125px;background:#f1e4cd;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:1s;z-index:2}
+.seal{position:absolute;top:75px;left:calc(50% - 28px);width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#d4b87d,#92703d);color:white;font-size:28px;display:grid;place-items:center;z-index:3;border:2px solid #e6d1a6}
+.envelope.open .flap{transform:rotateX(180deg)}
+.envelope.open .seal{opacity:0}
+button,.btn{background:#a58a56;color:white;border:1px solid #a58a56;padding:12px 22px;text-decoration:none;font-size:13px}
+.invite{display:none;animation:appear 1s}
+.invite.show{display:block}
+header{padding:65px 20px 40px;background:#f9f4eb}
+header h2{font-size:48px;margin:8px}
+.amp{font:30px Georgia;color:#b09562}
+section{padding:38px 22px;max-width:500px;margin:auto}
+.line{width:70px;height:1px;background:#d6c5a6;margin:0 auto}
+.date{border-block:1px solid #d6c5a6;padding:22px;margin:25px auto;max-width:330px}
+.date strong{font:26px 'Cormorant Garamond',serif}
+.count{display:flex;gap:8px;justify-content:center;direction:ltr}
+.unit{background:#eee3d0;padding:13px 4px;flex:1;max-width:80px}
+.unit b{display:block;font:25px Georgia}
+.unit span{font-size:10px}
+.venue{border:1px solid #d6c5a6;padding:22px;margin:20px auto;max-width:330px;background:#fbf7ef}
+footer{padding:35px;color:#9c895f;font-size:12px}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<button class="lang" id="lang">EN / عربي</button>
+
+<div class="cover" id="cover">
+ <div class="inner">
+  <div class="small" data-ar="دعوة زفاف إلكترونية" data-en="A WEDDING INVITATION">دعوة زفاف إلكترونية</div>
+  <h1 data-ar="حكاية حب<br>تبدأ للأبد" data-en="A Love Story<br>Begins Forever">حكاية حب<br>تبدأ للأبد</h1>
+  <p data-ar="يسعدنا دعوتكم لمشاركتنا أجمل أيام العمر" data-en="Join us to celebrate our special day">يسعدنا دعوتكم لمشاركتنا أجمل أيام العمر</p>
+  <div class="envelope" id="envelope"><div class="flap"></div><div class="seal">♡</div></div>
+  <button id="open" data-ar="افتح الدعوة" data-en="OPEN INVITATION">افتح الدعوة</button>
+ </div>
+</div>
+
+<main class="invite" id="invite">
+ <header>
+  <div class="small" data-ar="بسم الله الرحمن الرحيم" data-en="WITH LOVE AND BLESSINGS">بسم الله الرحمن الرحيم</div>
+  <h2 id="groom">اسم العريس</h2>
+  <div class="amp">&amp;</div>
+  <h2 id="bride">اسم العروسة</h2>
+  <p data-ar="يتشرفان بدعوتكم لحضور حفل زفافهما ومشاركتهما أجمل لحظات العمر." data-en="Joyfully invite you to celebrate their wedding day.">يتشرفان بدعوتكم لحضور حفل زفافهما ومشاركتهما أجمل لحظات العمر.</p>
+ </header>
+ <div class="line"></div>
+ <section>
+  <div class="small" data-ar="احفظوا الموعد" data-en="SAVE THE DATE">احفظوا الموعد</div>
+  <h3 data-ar="يومنا المنتظر" data-en="Our Special Day">يومنا المنتظر</h3>
+  <div class="date"><strong id="dateLabel">التاريخ يُحدد لاحقًا</strong><p id="timeLabel">الساعة تُحدد لاحقًا</p></div>
+  <div class="count">
+   <div class="unit"><b id="days">--</b><span>DAYS</span></div>
+   <div class="unit"><b id="hours">--</b><span>HOURS</span></div>
+   <div class="unit"><b id="mins">--</b><span>MINUTES</span></div>
+   <div class="unit"><b id="secs">--</b><span>SECONDS</span></div>
+  </div>
+ </section>
+ <div class="line"></div>
+ <section>
+  <div class="small" data-ar="في انتظاركم" data-en="WE'LL BE WAITING">في انتظاركم</div>
+  <h3 data-ar="مكان الحفل" data-en="The Venue">مكان الحفل</h3>
+  <div class="venue">
+   <h3 id="venue">اسم القاعة</h3>
+   <p id="address">العنوان يُحدد لاحقًا</p>
+   <a class="btn" id="map" href="https://maps.google.com/" target="_blank" data-ar="افتح الخريطة" data-en="OPEN MAP">افتح الخريطة</a>
+  </div>
+  <button id="share" data-ar="شارك الدعوة" data-en="SHARE INVITATION">شارك الدعوة</button>
+ </section>
+ <footer>♡<br><span data-ar="فرحتنا تكمل بوجودكم" data-en="MADE WITH LOVE">فرحتنا تكمل بوجودكم</span></footer>
+</main>
+
+<script>
+/* غيّر البيانات دي لما تحدد تفاصيل الفرح */
+const wedding={
+ groom:"اسم العريس",
+ bride:"اسم العروسة",
+ dateTime:"", // مثال: 2027-06-15T19:00:00
+ dateAr:"التاريخ يُحدد لاحقًا",
+ dateEn:"Date to be announced",
+ timeAr:"الساعة تُحدد لاحقًا",
+ timeEn:"Time to be announced",
+ venue:"اسم القاعة",
+ address:"العنوان يُحدد لاحقًا",
+ map:"https://maps.google.com/"
+};
+
+document.getElementById("groom").textContent=wedding.groom;
+document.getElementById("bride").textContent=wedding.bride;
+document.getElementById("venue").textContent=wedding.venue;
+document.getElementById("address").textContent=wedding.address;
+document.getElementById("map").href=wedding.map;
+let lang="ar";
+function language(){
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-ar]").forEach(e=>e.innerHTML=e.dataset[lang]);
+ document.getElementById("lang").textContent=lang==="ar"?"EN / عربي":"عربي / EN";
+ document.getElementById("dateLabel").textContent=lang==="ar"?wedding.dateAr:wedding.dateEn;
+ document.getElementById("timeLabel").textContent=lang==="ar"?wedding.timeAr:wedding.timeEn;
+}
+language();
+document.getElementById("lang").onclick=()=>{lang=lang==="ar"?"en":"ar";language()};
+document.getElementById("open").onclick=()=>{
+ document.getElementById("envelope").classList.add("open");
+ setTimeout(()=>{
+  document.getElementById("cover").style.display="none";
+  document.getElementById("invite").classList.add("show");
+  window.scrollTo(0,0);
+ },700);
+};
+function countdown(){
+ if(!wedding.dateTime)return;
+ let d=new Date(wedding.dateTime)-new Date();
+ if(d<0)d=0;
+ document.getElementById("days").textContent=Math.floor(d/86400000);
+ document.getElementById("hours").textContent=Math.floor(d/3600000)%24;
+ document.getElementById("mins").textContent=Math.floor(d/60000)%60;
+ document.getElementById("secs").textContent=Math.floor(d/1000)%60;
+}
+countdown();setInterval(countdown,1000);
+document.getElementById("share").onclick=async()=>{
+ try{
+  if(navigator.share)await navigator.share({title:"دعوة زفاف",text:`زفاف ${wedding.groom} و${wedding.bride}`,url:location.href});
+  else{await navigator.clipboard.writeText(location.href);alert("تم نسخ الرابط");}
+ }catch(e){}
+};
+</script>
+</body>
+</html>
